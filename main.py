@@ -10,5 +10,7 @@ driver.maximize_window()
 driver.implicitly_wait(30)
 driver.set_page_load_timeout(60)
 driver.get("https://www.google.com/")
-driver.save_screenshot("./test.png")
+assert "Google" in driver.title
+driver.save_screenshot("./images/test.png")
 time.sleep(5)
+driver.quit()
