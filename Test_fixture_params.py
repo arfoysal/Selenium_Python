@@ -13,6 +13,7 @@ def init_driver(request):
     yield
     web_driver.quit()
 
+
 @pytest.mark.usefixtures("init_driver")
 class BaseTest:
     pass
