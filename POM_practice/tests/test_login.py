@@ -6,5 +6,10 @@ class TestLogin(BaseTest):
 
     def test_valid_login(self):
         self.loginPage.login(settings.username, settings.password)
-        self.productPage.wait_for_product_text()
+        self.homepage.wait_for_product_text()
+
+    def test_locked_user_login(self):
+        self.loginPage.login(settings.locked_username, settings.password)
+        assert "Epic sadface: Sorry, this user has been locked out" in self.loginPage.get_locked_error_text()
+
 

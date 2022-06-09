@@ -5,8 +5,9 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 from POM_practice.pages.base_page import BasePage
+from POM_practice.pages.home_page import HomePage
 from POM_practice.pages.login_page import LoginPage
-from POM_practice.pages.product_page import ProductPage
+
 from POM_practice.tests import settings
 driver = None
 
@@ -34,7 +35,7 @@ def get_driver(request, get_browser):
     # request.cls.driver = driver
     # request.cls.BasePage = BasePage(driver)
     request.cls.loginPage = LoginPage(driver)
-    request.cls.productPage = ProductPage(driver)
+    request.cls.homePage = HomePage(driver)
 
     #yield request.cls.driver
     yield driver
